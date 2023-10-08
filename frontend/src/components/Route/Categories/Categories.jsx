@@ -41,11 +41,11 @@ const Categories = () => {
                   onClick={() => handleSubmit(i)}
                 >
                   <h5 className={`text-[17px] leading-[1.3]`}>{i.title}</h5>
-                  <img
+                  {/* <img
                     src={i.image_Url}
                     className="w-[120px] object-cover"
                     alt=""
-                  />
+                  /> */}
                 </div>
                 
               );

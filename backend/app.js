@@ -11,9 +11,10 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(express.json());
-app.use(cookieParser());
-app.use("/test", (req, res) => {
+// app.use(express.json());
+// app.use(cookieParser());
+// app.use(express.json());
+app.use("/", (req, res) => {
   res.send("Hello world!");
 });
 

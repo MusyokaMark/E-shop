@@ -612,7 +612,7 @@ export const navItems = [
     },
     {
       id: 7,
-      title: "Music, Safety & Fire",
+      title: "Music, Arts & Crafts",
       subTitle: "",
       image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
       subcategories: [
@@ -1525,6 +1525,96 @@ export const navItems = [
             image_Url: "",
           },
         ],
+    },
+    {
+      id: 25,
+      title: "Security, Safety & Fire",
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+        subcategories: [
+          {
+            id: 2501,
+            title: "Personal Protective Equipment (PPE)",
+            image_Url: "",
+          },
+          {
+            id: 2502,
+            title: "Fire Fighting Equipment & Devices",
+            image_Url: "",
+          },
+          {
+            id: 2503,
+            title: "Security & Surveillance",
+            image_Url: "",
+          },
+          {
+            id: 2504,
+            title: "Alarm Systems",
+            image_Url: "",
+          },
+          {
+            id: 2505,
+            title: "Biometrics & Access Control Devices",
+            image_Url: "",
+          },
+          {
+            id: 2506,
+            title: "Metal Detectors",
+            image_Url: "",
+          },
+          {
+            id: 2507,
+            title: "GPS Tracking Systems",
+            image_Url: "",
+          },
+          {
+            id: 2508,
+            title: "Safety, Security & Fire Signs",
+            image_Url: "",
+          },
+          {
+            id: 2509,
+            title: "Gas & Smoke Detectors",
+            image_Url: "",
+          },
+          {
+            id: 2510,
+            title: "Barriers",
+            image_Url: "",
+          },
+          {
+            id: 2511,
+            title: "Others",
+            image_Url: "",
+          },
+          {
+            id: 2512,
+            title: "Door Locks & Security Features",
+            image_Url: "",
+          },
+          {
+            id: 2513,
+            title: "Peephole Viewers & Doorbells",
+            image_Url: "",
+          },
+          {
+            id: 2514,
+            title: "Safes",
+            image_Url: "",
+          },
+          {
+            id: 2515,
+            title: "First Aid Kits & Boxes",
+            image_Url: "",
+          },
+          {
+            id: 2516,
+            title: "Road Works Signs & Traffic Control",
+            image_Url: "",
+          },
+        ],
+        
     },
   ];
   

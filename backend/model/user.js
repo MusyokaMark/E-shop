@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema({
   },
   phoneNumber:{
     type: Number,
+    minLength: [10, "Number should be 10"],
   },
   addresses:[
     {

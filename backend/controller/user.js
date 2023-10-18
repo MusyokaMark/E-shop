@@ -35,7 +35,7 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `https://e-shop-sgtp.vercel.app/${activationToken}`;
+    const activationUrl = `http://localhost:3000/${activationToken}`;
 
     try {
       await sendMail({
@@ -97,6 +97,21 @@ router.post(
     }
   })
 );
+
+
+// @desc    Auth with Google
+// @route   GET /auth/google
+// router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
+
+// @desc    Google auth callback
+// @route   GET /auth/google/callback
+// router.get(
+//   '/google/callback',
+//   passport.authenticate('google', { failureRedirect: '/' }),
+//   (req, res) => {
+//     res.redirect('/')
+//   }
+// )
 
 // login user
 router.post(

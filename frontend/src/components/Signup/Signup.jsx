@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 const Singup = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
@@ -30,11 +31,12 @@ const Singup = () => {
     e.preventDefault();
 
     axios
-      .post(`${server}/user/create-user`, { name, email, password, avatar })
+      .post(`${server}/user/create-user`, { name, email, phoneNumber, password, avatar })
       .then((res) => {
         toast.success(res.data.message);
         setName("");
         setEmail("");
+        setPhoneNumber("");
         setPassword("");
         setAvatar();
       })
@@ -46,7 +48,7 @@ const Singup = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        <h2 className="mt-4 text-center text-3xl font-extrabold text-gray-900">
           Register as a new user
         </h2>
       </div>
@@ -65,6 +67,7 @@ const Singup = () => {
                   type="text"
                   name="text"
                   autoComplete="name"
+                  placeholder="Full Name"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -85,9 +88,31 @@ const Singup = () => {
                   type="email"
                   name="email"
                   autoComplete="email"
+                  placeholder="example@gmail.com"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Phone Number
+              </label>
+              <div className="mt-1">
+                <input
+                  type="number"
+                  name="phoneNumber"
+                  autoComplete="phoneNumber"
+                  placeholder="0712345678"
+                  required
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
@@ -163,7 +188,7 @@ const Singup = () => {
             <div>
               <button
                 type="submit"
-                className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700"
               >
                 Submit
               </button>

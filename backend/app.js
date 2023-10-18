@@ -5,9 +5,11 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
+// const sesson = require('express-session')
+// const passport = require('passport')
+
 app.use(cors({
-  origin: 'https://e-shop-sgtp.vercel.app',
-  
+  origin: 'http://localhost:3000',
   credentials: true
 }));
 
@@ -21,12 +23,23 @@ app.use("/test", (req, res) => {
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
+// require('./config/passport')(passport)
+
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({
     path: "config/.env",
   });
 }
+//session
+// app.use(session({
+//   secret: 'keybord cat',
+//   resave: false,
+//   saveUninitialized: false,
+// }))
+//passport middleware
+// app.use(passport.initialize())
+// app.use(passport.session())
 
 // import routes
 const user = require("./controller/user");
@@ -50,6 +63,7 @@ app.use("/api/v2/event", event);
 app.use("/api/v2/coupon", coupon);
 app.use("/api/v2/payment", payment);
 app.use("/api/v2/withdraw", withdraw);
+
 
 // it's for ErrorHandling
 app.use(ErrorHandler);

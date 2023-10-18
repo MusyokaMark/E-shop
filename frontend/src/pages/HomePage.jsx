@@ -12,10 +12,10 @@ const HomePage = () => {
   return (
     <div>
         <Header activeHeading={1} />
-        <Hero />
+        {/* <Hero /> */}
         <Categories />
         <BestDeals />
-        <Events />
+        {/* <Events /> */}
         <FeaturedProduct />
         <Sponsored />
         <Footer />

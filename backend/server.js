@@ -1,6 +1,8 @@
 const app = require("./app");
 const connectDatabase = require("./db/Database");
 const cloudinary = require("cloudinary");
+// const sesson = require('express-session')
+// const passport = require('passport')
 
 // Handling uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -14,6 +16,8 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     path: "config/.env",
   });
 }
+
+// require('./config/passport')(password)
 
 // connect db
 connectDatabase();

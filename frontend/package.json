@@ -4,9 +4,12 @@
   "private": true,
   "homepage": "http://eshop.curlisstourssafaris.co.ke",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@material-ui/core": "^4.12.4",
     "@material-ui/data-grid": "^4.0.0-alpha.37",
     "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
     "@paypal/react-paypal-js": "^7.8.3",
     "@reduxjs/toolkit": "^1.9.3",
     "@stripe/react-stripe-js": "^2.1.0",
@@ -29,6 +32,7 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "redux-toolkit": "^1.1.2",
+    "slick-carousel": "^1.8.1",
     "socket.io-client": "^4.6.1",
     "timeago.js": "^4.0.2",
     "web-vitals": "^2.1.4"

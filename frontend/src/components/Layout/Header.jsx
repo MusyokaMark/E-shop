@@ -98,7 +98,7 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
 
-          
+
 
           <div>
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
@@ -106,14 +106,13 @@ const Header = ({ activeHeading }) => {
                 {isSeller ? "Dashboard" : "Sell"}{" "}
                 <IoIosArrowForward className="ml-1" />
               </h1>
-            </Link> 
+            </Link>
           </div>
         </div>
       </div>
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#76ea8f] h-[50px]`}
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          } transition hidden 800px:flex items-center justify-between w-full bg-[#76ea8f] h-[50px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -182,13 +181,13 @@ const Header = ({ activeHeading }) => {
                       className="w-[35px] h-[35px] rounded-full"
                       alt=""
                     />
-                    
+
                   </Link>
-                  
+
                 ) : (
                   <Link to="/login">
                     <CgProfile size={30} color="black" />
-                    
+
                   </Link>
                 )}
               </div>
@@ -198,7 +197,7 @@ const Header = ({ activeHeading }) => {
               <div className="relative cursor-pointer mr-[15px]">
                 {isAuthenticated ? (
                   <Link to="/profile">
-                      <h4>Hello,{user?.name.split(" ")[0]}</h4>
+                    <h4>Hello,{user?.name.split(" ")[0]}</h4>
                   </Link>
                 ) : (
                   <Link to="/login">
@@ -221,9 +220,8 @@ const Header = ({ activeHeading }) => {
 
       {/* mobile header */}
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        }
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          }
       w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">

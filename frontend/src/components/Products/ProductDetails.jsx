@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
-  AiFillHeart,
-  AiOutlineHeart,
   AiOutlineMessage,
-  AiOutlineShoppingCart,
+  AiOutlineVerticalLeft,
 } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -29,6 +27,27 @@ const ProductDetails = ({ data }) => {
   const [select, setSelect] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [showContact, setShowContact] = useState(false);
+  const [showPhoneForm, setShowPhoneForm] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const handlePhoneButtonClick = () => {
+    setShowPhoneForm(true);
+  };
+
+  const handlePhoneFormSubmit = (e) => {
+    e.preventDefault();
+    // Handle the phone number submission here, e.g., send it to a server
+    alert(`Phone number submitted: ${phoneNumber}`);
+    setShowPhoneForm(false);
+  };
+
+
+  const handlePhone = () => {
+    if (isAuthenticated) {
+      setShowContact(true);
+    }
+  };
   useEffect(() => {
     dispatch(getAllProductsShop(data && data?.shop._id));
     if (wishlist && wishlist.find((i) => i._id === data?._id)) {
@@ -85,7 +104,7 @@ const ProductDetails = ({ data }) => {
       0
     );
 
-  const avg =  totalRatings / totalReviewsLength || 0;
+  const avg = totalRatings / totalReviewsLength || 0;
 
   const averageRating = avg.toFixed(2);
 
@@ -128,9 +147,8 @@ const ProductDetails = ({ data }) => {
                   {data &&
                     data.images.map((i, index) => (
                       <div
-                        className={`${
-                          select === 0 ? "border" : "null"
-                        } cursor-pointer`}
+                        className={`${select === 0 ? "border" : "null"
+                          } cursor-pointer`}
                       >
                         <img
                           src={`${i?.url}`}
@@ -141,9 +159,8 @@ const ProductDetails = ({ data }) => {
                       </div>
                     ))}
                   <div
-                    className={`${
-                      select === 1 ? "border" : "null"
-                    } cursor-pointer`}
+                    className={`${select === 1 ? "border" : "null"
+                      } cursor-pointer`}
                   ></div>
                 </div>
               </div>
@@ -159,55 +176,9 @@ const ProductDetails = ({ data }) => {
                   </h3>
                 </div>
 
-                <div className="flex items-center mt-12 justify-between pr-3">
-                  <div>
-                    <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
-                      onClick={decrementCount}
-                    >
-                      -
-                    </button>
-                    <span className="bg-gray-200 text-gray-800 font-medium px-4 py-[11px]">
-                      {count}
-                    </span>
-                    <button
-                      className="bg-gradient-to-r from-teal-400 to-teal-500 text-white font-bold rounded-l px-4 py-2 shadow-lg hover:opacity-75 transition duration-300 ease-in-out"
-                      onClick={incrementCount}
-                    >
-                      +
-                    </button>
-                  </div>
-                  <div>
-                    {click ? (
-                      <AiFillHeart
-                        size={30}
-                        className="cursor-pointer"
-                        onClick={() => removeFromWishlistHandler(data)}
-                        color={click ? "red" : "#333"}
-                        title="Remove from wishlist"
-                      />
-                    ) : (
-                      <AiOutlineHeart
-                        size={30}
-                        className="cursor-pointer"
-                        onClick={() => addToWishlistHandler(data)}
-                        color={click ? "red" : "#333"}
-                        title="Add to wishlist"
-                      />
-                    )}
-                  </div>
-                </div>
-                <div
-                  className={`${styles.button} !mt-6 !rounded !h-11 flex items-center`}
-                  onClick={() => addToCartHandler(data._id)}
-                >
-                  {/* <span className="text-white flex items-center">
-                    Add to cart <AiOutlineShoppingCart className="ml-1" />
-                  </span> */}
-                  <span className="text-white">Message</span>
-                </div>
+
                 <div className="flex items-center pt-8">
-                  <Link to={`/shop/preview/${data?.shop._id}`}>
+                  {/* <Link to={`/shop/preview/${data?.shop._id}`}>
                     <img
                       src={`${data?.shop?.avatar?.url}`}
                       alt=""
@@ -223,16 +194,75 @@ const ProductDetails = ({ data }) => {
                     <h5 className="pb-3 text-[15px]">
                       ({averageRating}/5) Ratings
                     </h5>
-                  </div>
+                  </div> */}
                   <div
-                    className={`${styles.button} bg-[#6443d1] mt-4 !rounded !h-11`}
+                    className={`${styles.button} bg-[#faf9fc] mt-4 mr-4 !rounded !h-11 border border-gray-300`}
                     onClick={handleMessageSubmit}
                   >
-                    <span className="text-white flex items-center">
-                      Send Message <AiOutlineMessage className="ml-1" />
+                    <span className="text-black flex items-center">
+                      Chat <AiOutlineMessage className="ml-1" />
+                    </span>
+                  </div>
+                  <div>
+                    {isAuthenticated ? (
+                      <div
+                        className={`${styles.button} bg-[#faf9fc] mt-4 mr-4 !rounded !h-11 border border-gray-300`}
+                        onClick={handlePhone}
+                      >
+                        <span className="text-black flex items-center">
+                          {data.shop?.
+                            phoneNumber}<AiOutlineVerticalLeft className="ml-1" />
+                        </span>
+                      </div>
+                    ) : (
+                      <div
+                        className={`${styles.button} bg-[#faf9fc] mt-4 mr-4 !rounded !h-11 border border-gray-300`}
+
+                      >
+                        <span className="text-black">
+                          view contact
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Rest of your code */}
+                  </div>
+
+                </div>
+                <div className="w-full flex">
+                  <div>
+                    {!showPhoneForm ? (
+                      <div
+                        className={`${styles.button} bg-[#faf9fc] mt-4 mr-4 !rounded !h-11 border border-gray-300`}
+                        onClick={handlePhoneButtonClick}
+                      >
+                        <span className="text-black flex items-center">
+                          Request call back
+                        </span>
+                      </div>
+                    ) : (
+                      <form onSubmit={handlePhoneFormSubmit}>
+                        <label htmlFor="phoneNumber">Enter your phone number:</label>
+                        <input
+                          type="tel"
+                          id="phoneNumber"
+                          placeholder="e.g., 071-456-7890"
+                          value={phoneNumber}
+                          onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
+                        <button type="submit">Submit</button>
+                      </form>
+                    )}
+
+                    {/* Rest of your code */}
+                  </div>                  
+                  <div className={`${styles.button} bg-[#faf9fc] mt-4 !rounded !h-11 border border-gray-300`} onClick={handleMessageSubmit}>
+                    <span className="text-black flex items-center">
+                      Make an Offer
                     </span>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -357,6 +387,7 @@ const ProductDetailsInfo = ({
             </Link>
             <p className="pt-2">{data.shop.description}</p>
           </div>
+
           <div className="w-full 800px:w-[50%] mt-5 800px:mt-0 800px:flex flex-col items-end">
             <div className="text-left">
               <h5 className="font-[600]">
@@ -371,6 +402,21 @@ const ProductDetailsInfo = ({
                   {products && products.length}
                 </span>
               </h5>
+              <h6 className="font-[600] pt-3">
+                Phone Number:{" "}
+                <span className="font-[500]">
+                  {data.shop?.
+                    phoneNumber}
+                </span>
+              </h6>
+              <h6 className="font-[600] pt-3">
+                Email:{" "}
+                <span className="font-[500]">
+                  <a href={`mailto:${data.shop?.email}`} >
+                    {data.shop?.email}
+                  </a>
+                </span>
+              </h6>
               <h5 className="font-[600] pt-3">
                 Total Reviews:{" "}
                 <span className="font-[500]">{totalReviewsLength}</span>

@@ -6,6 +6,7 @@ import {
   AiOutlineHeart,
   AiOutlineShoppingCart,
   AiOutlineStar,
+  AiOutlineShareAlt,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
@@ -65,12 +66,12 @@ const ProductCard = ({ data, isEvent }) => {
     const currentDate = new Date();
     const createdAt = new Date(createdDate);
     const timeDifference = currentDate - createdAt;
-  
+
     // Calculate days, hours, and minutes
     const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const hoursDifference = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
     const minutesDifference = Math.floor((timeDifference / (1000 * 60)) % 60);
-  
+
     if (daysDifference > 0) {
       return `${daysDifference} day${daysDifference !== 1 ? 's' : ''} ago`;
     } else if (hoursDifference > 0) {
@@ -79,26 +80,42 @@ const ProductCard = ({ data, isEvent }) => {
       return `${minutesDifference} minute${minutesDifference !== 1 ? 's' : ''} ago`;
     }
   };
-  
-  
+
+  const handleShareProduct = () => {
+    const productLink = `http://localhost:3000/product/${data._id}`; // Replace with your product link
+    const shareMessage = `${productLink}`;
+
+    const userShareInput = window.prompt('Share the product link:', shareMessage);
+
+    if (userShareInput !== null) {
+      // Handle user's response here (e.g., send the link to a server or perform other actions)
+      console.log(`User shared: ${userShareInput}`);
+    }
+  };
+
+
 
   return (
     <>
       <div className="w-full h-[300px] bg-white rounded-lg shadow-sm p-3 relative cursor-pointer">
-        
-        <span className="text-[12px] text-gray-500">
-          {calculateDaysSinceCreation(data?.createdAt)}
-        </span>
+
+
         <div className="flex items-center">
-          <Link to={`/shop/preview/${data?.shop._id}`}>
+          <Link to={`/shop/preview/${data?.shop._id}`} className="flex items-center">
             <img
               src={`${data.shop.avatar.url}`}
-              className="w-5 h-5 rounded-full"
+              className="w-8 h-8 rounded-full"
               alt=""
             />
-            <h6 className={`${styles.shop_name} ml-8 -mt-8`}>{data.shop.name}</h6>
+            <div className="ml-2">
+              <h6 className={`${styles.shop_name}`}>{data.shop.name}</h6>
+              <span className="text-[12px] text-gray-500 mb-8">
+                {calculateDaysSinceCreation(data?.createdAt)}
+              </span>
+            </div>
           </Link>
         </div>
+
 
         <Link to={`${isEvent === true ? `/product/${data._id}?isEvent=true` : `/product/${data._id}`}`}>
           <img
@@ -107,9 +124,6 @@ const ProductCard = ({ data, isEvent }) => {
             className="w-full h-[100px] object-contain"
           />
         </Link>
-        {/* <Link to={`/shop/preview/${data?.shop._id}`}>
-          <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
-        </Link> */}
         <Link to={`${isEvent === true ? `/product/${data._id}?isEvent=true` : `/product/${data._id}`}`}>
           <h4 className="pb-3 font-[500]">
             {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
@@ -164,13 +178,13 @@ const ProductCard = ({ data, isEvent }) => {
             color="#333"
             title="Quick view"
           />
-          {/* <AiOutlineShoppingCart
+          <AiOutlineShareAlt
             size={20}
             className="cursor-pointer absolute right-2 top-24"
-            onClick={() => addToCartHandler(data._id)}
+            onClick={() => handleShareProduct(data._id)}
             color="#444"
-            title="Add to cart"
-          /> */}
+            title="Share Product"
+          />
           {open ? <ProductDetailsCard setOpen={setOpen} data={data} /> : null}
         </div>
       </div>

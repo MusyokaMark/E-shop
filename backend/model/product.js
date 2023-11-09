@@ -17,8 +17,23 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter your product subcategory!"],
   },
+  specialSpecs: {
+    type: String,
+  },
   tags: {
     type: String,
+  },
+  productType:{
+    type: String,
+    required: [true, "Please enter your product product type!"],
+  },
+  condition: {
+    type: String,
+    required: [true, "Please enter your product condition!"],
+  },
+  delivery_method: {
+    type: String,
+    required: [true, "Please enter your product delivery method!"],
   },
   originalPrice: {
     type: Number,
@@ -26,6 +41,14 @@ const productSchema = new mongoose.Schema({
   discountPrice: {
     type: Number,
     required: [true, "Please enter your product price!"],
+  },
+  county: {
+    type: String,
+    requires: [true, "Enter location"],
+  },
+  brand: {
+    type: String,
+    requires: [true, "Enter brand"],
   },
   stock: {
     type: Number,

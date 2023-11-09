@@ -18,8 +18,13 @@ const userSchema = new mongoose.Schema({
     select: false,
   },
   phoneNumber:{
-    type: Number,
-    minLength: [10, "Number should be 10"],
+    type: String,
+    required: [true, "Enter Phone Number"],
+    validate: {
+      validator: function (value) {
+        return /^0\d{9}$/.test(value);
+      },
+    },
   },
   addresses:[
     {

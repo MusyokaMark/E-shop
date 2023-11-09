@@ -7,6 +7,7 @@ import {
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { IoIosCall } from 'react-icons/io'
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft, BiCategoryAlt } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
@@ -68,7 +69,7 @@ const Header = ({ activeHeading }) => {
           <div className="w-[50%] relative">
             <input
               type="text"
-              placeholder="Search Anything..."
+              placeholder="I'm looking for..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="h-[40px] w-1/2 px-2 border-[#0b0b0b] border-[1px] rounded-md"
@@ -99,6 +100,17 @@ const Header = ({ activeHeading }) => {
           </div>
 
 
+          <div className='w-4/12 block md-lg:hidden pl-2 md-lg:w-full md-lg:pl-0'>
+            <div className='w-full flex justify-end md-lg:justify-start gap-3 items-center'>
+              <div className='w-[48px] h-[48px] rounded-full flex bg-gray-400 justify-center items-center'>
+                <span><IoIosCall /></span>
+              </div>
+              <div className='flex justify-end flex-col gap-1'>
+                <h2 className='text-md font-medium text-slate-700'>+123456789000</h2>
+                <span className='text-sm'>support 24/7 time</span>
+              </div>
+            </div>
+          </div>
 
           <div>
             <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
@@ -222,7 +234,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
           }
-      w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
+      w-full h-[60px] bg-[#76ea8f] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
           <div>
@@ -241,22 +253,31 @@ const Header = ({ activeHeading }) => {
               />
             </Link>
           </div>
-          <div>
-            <div
-              className="relative mr-[20px]"
-              onClick={() => setOpenCart(true)}
-            >
-              <AiOutlineShoppingCart size={30} />
-              <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
-                {cart && cart.length}
-              </span>
+          <div className={`${styles.noramlFlex}`}>
+            <div className="relative cursor-pointer mr-[15px] mt-3 border-[#fafcfb]">
+              {isAuthenticated ? (
+                <Link to="/profile">
+                  <img
+                    src={`${user?.avatar?.url}`}
+                    className="w-[40px] h-[40px] rounded-full border-[#f9fafa] border-[3px]"
+                    alt=""
+                  />
+
+                </Link>
+
+              ) : (
+                <Link to="/login">
+                  <CgProfile size={30} color="black" />
+
+                </Link>
+              )}
             </div>
           </div>
           {/* cart popup */}
           {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
 
           {/* wishlist popup */}
-          {openWishlist ? <Wishlist setOpenWishlist={setOpenWishlist} /> : null}
+          {/* {openWishlist ? <Wishlist setOpenWishlist={setOpenWishlist} /> : null} */}
         </div>
 
         {/* header sidebar */}
@@ -264,17 +285,19 @@ const Header = ({ activeHeading }) => {
           <div
             className={`fixed w-full bg-[#0000005f] z-20 h-full top-0 left-0`}
           >
-            <div className="fixed w-[70%] bg-[#fff] h-screen top-0 left-0 z-10 overflow-y-scroll">
+            <div className="fixed w-[70%] bg-[#76ea8f] h-screen top-0 left-0 z-10 overflow-y-scroll">
               <div className="w-full justify-between flex pr-3">
                 <div>
                   <div
-                    className="relative mr-[15px]"
-                    onClick={() => setOpenWishlist(true) || setOpen(false)}
+                    className="relative mr-[15px] my-8 w-[92%] m-auto h-[40px relative]"
+
                   >
-                    <AiOutlineHeart size={30} className="mt-5 ml-3" />
-                    <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
-                      {wishlist && wishlist.length}
-                    </span>
+                    <Link to="/">
+                      <img
+                        src=""
+                        alt="Logo"
+                      />
+                    </Link>
                   </div>
                 </div>
                 <RxCross1
@@ -287,7 +310,7 @@ const Header = ({ activeHeading }) => {
               <div className="my-8 w-[92%] m-auto h-[40px relative]">
                 <input
                   type="search"
-                  placeholder="Search Product..."
+                  placeholder="I'm looking for..."
                   className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
@@ -334,7 +357,7 @@ const Header = ({ activeHeading }) => {
                       <img
                         src={`${user.avatar?.url}`}
                         alt=""
-                        className="w-[60px] h-[60px] rounded-full border-[3px] border-[#0eae88]"
+                        className="w-[50px] h-[50px] rounded-full border-[3px] border-[#0eae88]"
                       />
                     </Link>
                   </div>

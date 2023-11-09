@@ -8,9 +8,37 @@ const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendMail");
 const sendToken = require("../utils/jwtToken");
 const { isAuthenticated, isAdmin } = require("../middleware/auth");
+const { config } = require("dotenv");
 
 // create user
 router.post("/create-user", async (req, res, next) => {
+  if (req.body.googleAccessToken) {
+    //google oauth
+    axios.get("hhttps://www.googleapis.com/oauth2/v3/userinfo", {
+      headers: {
+        "Authorization": `Bearer ${req.body.googleAccessToken}`
+      }
+    }).then(async response => {
+      const firstName = response.data.given_name;
+      const lastName = response.data.family_name;
+      const email = response.data.email;
+      const picture = response.data.picture;
+
+      const alreadyExistUser = await User.findOne({ email })
+      if (alreadyExistUser) {
+        return res.status(400).json({ message: "User already exist!" })
+      }
+      const result = await User.create({ firstName, lastName, email, avatar })
+      const token = jwt.sign({
+        email: result.email,
+        id: result._id
+      }, config.get("JWT_SECRET"), { expiresIn: "4h" })
+      res.status(200).json({ result, token })
+    }
+    ).catch(err => {
+      res.status(400).json({ message: "Invalid choice" })
+    })
+  } else {
   try {
     const { name, email, password, avatar } = req.body;
     const userEmail = await User.findOne({ email });
@@ -53,7 +81,9 @@ router.post("/create-user", async (req, res, next) => {
   } catch (error) {
     return next(new ErrorHandler(error.message, 400));
   }
+}
 });
+
 
 // create activation token
 const createActivationToken = (user) => {

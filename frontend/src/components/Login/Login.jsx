@@ -7,12 +7,16 @@ import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 import Navbar from "../Layout/Navbar";
+// import {useGoogleLogin} from '@react-oauth/google';
+// import {signinGoogle, signin} from "../../redux/actions/auth";
+import {useDispatch} from 'react-redux';
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
+  const dispatch = useDispatch()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,6 +61,15 @@ const Login = () => {
       });
   };
 
+  function handleGoogleLoginSuccess(tokenResponse) {
+
+    const accessToken = tokenResponse.access_token;
+
+    // dispatch(signinGoogle(accessToken,navigate))
+}
+// const login = useGoogleLogin({onSuccess: handleGoogleLoginSuccess});
+
+
   return (
 
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -85,7 +98,7 @@ const Login = () => {
           <form className="py-4" onSubmit={handleSubmit1}>
             <div>
               <button
-                type="submit"
+                // onClick={() => login()}
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-black bg-[#e5e7eb] hover:bg-[#e5e7eb]"
               >
                 <div className="flex items-center">

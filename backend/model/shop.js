@@ -25,8 +25,13 @@ const shopSchema = new mongoose.Schema({
     required: true,
   },
   phoneNumber: {
-    type: Number,
+    type: String,
     required: true,
+    validate: {
+      validator: function (value) {
+        return /^0\d{9}$/.test(value);
+      },
+    },
   },
   role: {
     type: String,

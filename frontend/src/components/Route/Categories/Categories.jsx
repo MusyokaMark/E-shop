@@ -81,11 +81,16 @@ import { brandingData, categoriesData } from "../../../static/data";
 import styles from "../../../styles/styles";
 import { BiCategoryAlt } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 const Categories = () => {
   const navigate = useNavigate();
   const [isPopupOpen, setPopupOpen] = useState(false);
+  
 
   // Remove the shuffle function to display all categories
   const allCategories = categoriesData;
@@ -105,7 +110,25 @@ const Categories = () => {
       setOpenCategory(categoryId);
     }
   };
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    slidesToShow: 6, // Number of slides to show at once
+    slidesToScroll: 2,
+    autoplaySpeed: 5000,
+  };
+  if (window.innerWidth <= 768) { // Adjust this breakpoint as needed
+    settings.slidesToShow = 2;
+  }
 
+  const handleCategoryClick = (category) => {
+    navigate(`/products?category=${category.title}`);
+  }
+  const handleSubcategoryClick = (subcategory) => {
+    navigate(`/products/category?subcategory=${subcategory.title}`);
+  }
 
   return (
     <>
@@ -125,8 +148,8 @@ const Categories = () => {
             ))}
         </div>
       </div>
-      <div className="p-16  py-px flex justify-between">
-        <h2 className="">What would you like to find?</h2>
+      <div className="p-16 md:p-4 py-px flex justify-between ">
+        <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl">What would you like to find?</h2>
         <div className="flex items-center">
           <button className="pointer" onClick={togglePopup}>View All</button>
           <BiCategoryAlt size={20} className="" onClick={togglePopup} />
@@ -149,7 +172,7 @@ const Categories = () => {
                   {categoriesData.map((category) => (
                     <li key={category.id}>
                       <div className="flex items-center border-2">
-                        <span>{category.title}</span>
+                        <span onClick={handleCategoryClick} className="cursor-pointer">{category.title}</span>
                         <button
                           onClick={() => toggleSubcategories(category.id)}
                           className="ml-2 text-gray-500 focus:outline-none"
@@ -158,9 +181,9 @@ const Categories = () => {
                         </button>
                       </div>
                       {openCategory === category.id && (
-                        <ul className="cursor-pointer"  >
+                        <ul className="cursor-pointer"   >
                           {category.subcategories.map((subcategory) => (
-                            <li key={subcategory.id}>{subcategory.title}</li>
+                            <li key={subcategory.id} onClick={handleSubcategoryClick}>{subcategory.title}</li>
                           ))}
                         </ul>
                       )}
@@ -175,39 +198,35 @@ const Categories = () => {
       </div>
 
       <div
-        className={`${styles.section} bg-gray-100 p-6 rounded-lg mb-12 overflow-x-auto`}
-        id="categories"
-      >
-        <div className="flex space-x-4">
-          {allCategories &&
-            allCategories.map((i) => {
-              const handleSubmit = () => {
-                navigate(`/products?category=${i.title}`);
-              };
-              return (
-                <div
-                  className="w-[150px] flex flex-col items-center cursor-pointer"
-                  key={i.id}
-                  onClick={handleSubmit}
-                >
-                  <div className="bg-gray-200 w-[150px] h-[150px] flex items-center justify-center rounded-md">
-                    <div className="flex flex-col items-center text-center">
-                      <img
-                        src={i.image_Url}
-                        className="w-[60px] h-[60px] object-cover"
-                        alt=""
-                      />
-                      <h5 className="text-[14px] leading-[1.3] mt-2 overflow-hidden whitespace-nowrap max-w-[200px] truncate">
-                        {i.title.length > 15 ? `${i.title.slice(0, 15)}...` : i.title}
-                      </h5>
-                    </div>
-                  </div>
+      className={`${styles.section} bg-gray-100 p-6 rounded-lg mb-12 overflow-hidden`}
+      id="categories"
+    >
+      <Slider {...settings}>
+        {allCategories &&
+          allCategories.map((category) => (
+            <div
+              className="flex flex-col items-center cursor-pointer"
+              key={category.id}
+              onClick={() => handleCategoryClick(category)}
+            >
+              <div className="bg-gray-200 w-40 h-40 flex items-center justify-center rounded-md">
+                <div className="flex flex-col items-center text-center">
+                  <img
+                    src={category.image_Url}
+                    className="w-24 h-24 object-cover"
+                    alt=""
+                  />
+                  <h5 className="text-sm leading-tight mt-1 overflow-hidden whitespace-nowrap max-w-48">
+                    {category.title.length > 15
+                      ? `${category.title.slice(0, 15)}...`
+                      : category.title}
+                  </h5>
                 </div>
-              );
-            })}
-        </div>
-      </div>
-
+              </div>
+            </div>
+          ))}
+      </Slider>
+    </div>
     </>
   );
 };

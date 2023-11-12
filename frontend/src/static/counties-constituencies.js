@@ -2,7 +2,7 @@ export const counties = [
     {
       "countyCode": 1,
       "name": "Mombasa",
-      constituencies: [
+      location: [
         { 
           "name": "changamwe" 
         },
@@ -16,7 +16,7 @@ export const counties = [
     {
       "countyCode": 2,
       "name": "Kwale",
-      "constituencies": [
+      location: [
         { "name": "msambweni" },
         { "name": "lungalunga" },
         { "name": "matuga" },
@@ -26,7 +26,7 @@ export const counties = [
     {
       "countyCode": 3,
       "name": "Kilifi",
-      "constituencies": [
+      location: [
         { "name": "kilifi north" },
         { "name": "kilifi south" },
         { "name": "kaloleni" },
@@ -39,7 +39,7 @@ export const counties = [
     {
       "countyCode": 4,
       "name": "Tana River",
-      "constituencies": [
+      location: [
         { "name": "garsen" },
         { "name": "galole" },
         { "name": "bura" }
@@ -48,12 +48,12 @@ export const counties = [
     {
       "countyCode": 5,
       "name": "Lamu",
-      "constituencies": [{ "name": "lamu east" }, { "name": "lamu west" }]
+      location: [{ "name": "lamu east" }, { "name": "lamu west" }]
     },
     {
       "countyCode": 6,
       "name": "Taita Taveta",
-      "constituencies": [
+      location: [
         { "name": "taveta" },
         { "name": "wundanyi" },
         { "name": "mwatate" },
@@ -63,7 +63,7 @@ export const counties = [
     {
       "countyCode": 7,
       "name": "Garissa",
-      "constituencies": [
+      location: [
         { "name": "garissa township" },
         { "name": "balambala" },
         { "name": "lagdera" },
@@ -75,7 +75,7 @@ export const counties = [
     {
       "countyCode": 8,
       "name": "Wajir",
-      "constituencies": [
+      location: [
         { "name": "wajir north" },
         { "name": "wajir east" },
         { "name": "tarbaj" },
@@ -87,7 +87,7 @@ export const counties = [
     {
       "countyCode": 9,
       "name": "Mandera",
-      "constituencies": [
+      location: [
         { "name": "mandera west" },
         { "name": "banissa" },
         { "name": "mandera north" },
@@ -99,7 +99,7 @@ export const counties = [
     {
       "countyCode": 10,
       "name": "Marsabit",
-      "constituencies": [
+      location: [
         { "name": "moyale" },
         { "name": "north horr" },
         { "name": "saku" },
@@ -109,12 +109,12 @@ export const counties = [
     {
       "countyCode": 11,
       "name": "Isiolo",
-      "constituencies": [{ "name": "isiolo north" }, { "name": "isiolo south" }]
+      location: [{ "name": "isiolo north" }, { "name": "isiolo south" }]
     },
     {
       "countyCode": 12,
       "name": "Meru",
-      "constituencies": [
+      location: [
         { "name": "igembe south" },
         { "name": "igembe central" },
         { "name": "igembe north" },
@@ -129,7 +129,7 @@ export const counties = [
     {
       "countyCode": 13,
       "name": "Tharaka Nithi",
-      "constituencies": [
+      location: [
         { "name": "maara" },
         { "name": "chuka/igambang'om" },
         { "name": "tharaka" }
@@ -138,7 +138,7 @@ export const counties = [
     {
       "countyCode": 14,
       "name": "Embu",
-      "constituencies": [
+      location: [
         { "name": "manyatta" },
         { "name": "runyenjes" },
         { "name": "mbeere south" },
@@ -148,7 +148,7 @@ export const counties = [
     {
       "countyCode": 15,
       "name": "Kitui",
-      "constituencies": [
+      location: [
         { "name": "mwingi north" },
         { "name": "mwingi west" },
         { "name": "mwingi central" },
@@ -162,7 +162,7 @@ export const counties = [
     {
       "countyCode": 16,
       "name": "Machakos",
-      "constituencies": [
+      location: [
         { "name": "masinga" },
         { "name": "yatta" },
         { "name": "kangundo" },
@@ -176,7 +176,7 @@ export const counties = [
     {
       "countyCode": 17,
       "name": "Makueni",
-      "constituencies": [
+      location: [
         { "name": "mbooni" },
         { "name": "kilome" },
         { "name": "kaiti" },
@@ -188,7 +188,7 @@ export const counties = [
     {
       "countyCode": 18,
       "name": "Nyandarua",
-      "constituencies": [
+      location: [
         { "name": "kinangop" },
         { "name": "kipipiri" },
         { "name": "ol kalou" },
@@ -199,7 +199,7 @@ export const counties = [
     {
       "countyCode": 19,
       "name": "Nyeri",
-      "constituencies": [
+      location: [
         { "name": "tetu" },
         { "name": "kieni" },
         { "name": "mathira" },
@@ -211,7 +211,7 @@ export const counties = [
     {
       "countyCode": 20,
       "name": "Kirinyaga",
-      "constituencies": [
+      location: [
         { "name": "mwea" },
         { "name": "gichugu" },
         { "name": "ndia" },
@@ -221,7 +221,7 @@ export const counties = [
     {
       "countyCode": 21,
       "name": "Murang'a",
-      "constituencies": [
+      location: [
         { "name": "kangema" },
         { "name": "mathioya" },
         { "name": "kiharu" },
@@ -234,7 +234,7 @@ export const counties = [
     {
       "countyCode": 22,
       "name": "Kiambu",
-      "constituencies": [
+      location: [
         { "name": "gatundu south" },
         { "name": "gatundu north" },
         { "name": "juja" },
@@ -252,7 +252,7 @@ export const counties = [
     {
       "countyCode": 23,
       "name": "Turkana",
-      "constituencies": [
+      location: [
         { "name": "turkana north" },
         { "name": "turkana west" },
         { "name": "turkana central" },
@@ -264,7 +264,7 @@ export const counties = [
     {
       "countyCode": 24,
       "name": "West Poket",
-      "constituencies": [
+      location: [
         { "name": "kapenguria" },
         { "name": "sigor" },
         { "name": "kacheliba" },
@@ -274,7 +274,7 @@ export const counties = [
     {
       "countyCode": 25,
       "name": "Samburu",
-      "constituencies": [
+      location: [
         { "name": "samburu west" },
         { "name": "samburu north" },
         { "name": "samburu east" }
@@ -283,7 +283,7 @@ export const counties = [
     {
       "countyCode": 26,
       "name": "Trans Nzoia",
-      "constituencies": [
+      location: [
         { "name": "kwanza" },
         { "name": "endebess" },
         { "name": "saboti" },
@@ -294,7 +294,7 @@ export const counties = [
     {
       "countyCode": 27,
       "name": "Uasin Gishu",
-      "constituencies": [
+      location: [
         { "name": "soy" },
         { "name": "turbo" },
         { "name": "moiben" },
@@ -306,7 +306,7 @@ export const counties = [
     {
       "countyCode": 28,
       "name": "Elgeyo Marakwet",
-      "constituencies": [
+      location: [
         { "name": "marakwet east" },
         { "name": "marakwet west" },
         { "name": "keiyo north" },
@@ -316,7 +316,7 @@ export const counties = [
     {
       "countyCode": 29,
       "name": "Nandi",
-      "constituencies": [
+      location: [
         { "name": "tinderet" },
         { "name": "aldai" },
         { "name": "nandi hills" },
@@ -328,7 +328,7 @@ export const counties = [
     {
       "countyCode": 30,
       "name": "Baringo",
-      "constituencies": [
+      location: [
         { "name": "tiaty" },
         { "name": "baringo  north" },
         { "name": "baringo central" },
@@ -340,7 +340,7 @@ export const counties = [
     {
       "countyCode": 31,
       "name": "Laikipia",
-      "constituencies": [
+      location: [
         { "name": "laikipia west" },
         { "name": "laikipia east" },
         { "name": "laikipia north" }
@@ -349,7 +349,7 @@ export const counties = [
     {
       "countyCode": 32,
       "name": "Nakuru",
-      "constituencies": [
+      location: [
         { "name": "molo" },
         { "name": "njoro" },
         { "name": "naivasha" },
@@ -366,7 +366,7 @@ export const counties = [
     {
       "countyCode": 33,
       "name": "Narok",
-      "constituencies": [
+      location: [
         { "name": "kilgoris" },
         { "name": "emurua dikirr" },
         { "name": "narok north" },
@@ -378,7 +378,7 @@ export const counties = [
     {
       "countyCode": 34,
       "name": "Kajiado",
-      "constituencies": [
+      location: [
         { "name": "kajiado north" },
         { "name": "kajiado central" },
         { "name": "kajiado east" },
@@ -389,7 +389,7 @@ export const counties = [
     {
       "countyCode": 35,
       "name": "Kericho",
-      "constituencies": [
+      location: [
         { "name": "kipkelion east" },
         { "name": "kipkelion west" },
         { "name": "ainamoi" },
@@ -401,7 +401,7 @@ export const counties = [
     {
       "countyCode": 36,
       "name": "Bomet",
-      "constituencies": [
+      location: [
         { "name": "sotik" },
         { "name": "chepalungu" },
         { "name": "bomet east" },
@@ -412,7 +412,7 @@ export const counties = [
     {
       "countyCode": 37,
       "name": "Kakamega",
-      "constituencies": [
+      location: [
         { "name": "lugari" },
         { "name": "likuyani" },
         { "name": "malava" },
@@ -430,7 +430,7 @@ export const counties = [
     {
       "countyCode": 38,
       "name": "Vihiga",
-      "constituencies": [
+      location: [
         { "name": "vihiga" },
         { "name": "sabatia" },
         { "name": "hamisi" },
@@ -441,7 +441,7 @@ export const counties = [
     {
       "countyCode": 39,
       "name": "Bungoma",
-      "constituencies": [
+      location: [
         { "name": "mt.elgon" },
         { "name": "sirisia" },
         { "name": "kabuchai" },
@@ -456,7 +456,7 @@ export const counties = [
     {
       "countyCode": 40,
       "name": "Busia",
-      "constituencies": [
+      location: [
         { "name": "teso north" },
         { "name": "teso south" },
         { "name": "nambale" },
@@ -469,7 +469,7 @@ export const counties = [
     {
       "countyCode": 41,
       "name": "Siaya",
-      "constituencies": [
+      location: [
         { "name": "ugenya" },
         { "name": "ugunja" },
         { "name": "alego usonga" },
@@ -481,7 +481,7 @@ export const counties = [
     {
       "countyCode": 42,
       "name": "Kisumu",
-      "constituencies": [
+      location: [
         { "name": "kisumu east" },
         { "name": "kisumu west" },
         { "name": "kisumu central" },
@@ -494,7 +494,7 @@ export const counties = [
     {
       "countyCode": 43,
       "name": "Homa Bay",
-      "constituencies": [
+      location: [
         { "name": "kasipul" },
         { "name": "kabondo kasipul" },
         { "name": "karachuonyo" },
@@ -508,7 +508,7 @@ export const counties = [
     {
       "countyCode": 44,
       "name": "Migori",
-      "constituencies": [
+      location: [
         { "name": "rongo" },
         { "name": "awendo" },
         { "name": "suna east" },
@@ -522,7 +522,7 @@ export const counties = [
     {
       "countyCode": 45,
       "name": "Kisii",
-      "constituencies": [
+      location: [
         { "name": "bonchari" },
         { "name": "south mugirango" },
         { "name": "bomachoge borabu" },
@@ -537,7 +537,7 @@ export const counties = [
     {
       "countyCode": 46,
       "name": "Nyamira",
-      "constituencies": [
+      location: [
         { "name": "kitutu masaba" },
         { "name": "west mugirango" },
         { "name": "north mugirango" },
@@ -547,7 +547,7 @@ export const counties = [
     {
       "countyCode": 47,
       "name": "Nairobi",
-      "constituencies": [
+      location: [
         { "name": "westlands" },
         { "name": "dagoretti north" },
         { "name": "dagoretti south" },

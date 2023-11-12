@@ -161,6 +161,8 @@ const ProductDetails = ({ data }) => {
             <span className='pt-1'><MdOutlineKeyboardArrowRight /></span>
             <Link to='/'>{data.subcategory}</Link>
             <span className='pt-1'><MdOutlineKeyboardArrowRight /></span>
+            <Link to='/'>{data.type}</Link>
+            <span className='pt-1'><MdOutlineKeyboardArrowRight /></span>
             <span>{data.name}</span>
           </div>
         </div>
@@ -200,7 +202,11 @@ const ProductDetails = ({ data }) => {
               
                 <p>Condition:  <span className="text-green-500">{data.condition}</span></p>
                 <p>Brand: <span className="text-green-500">{data.brand}</span></p>
-                <p>Product type:  <span className="text-green-500">{data.productType}</span></p>
+                <p>Style: <span className="text-green-500">{data.styles}</span></p>
+                <p>Material: <span className="text-green-500">{data.material}</span></p>
+                <p>Pattern: <span className="text-green-500">{data.pattern}</span></p>
+                <p>Seller type:  <span className="text-green-500">{data.productType}</span></p>
+                <p>Available Sizes:  <span className="text-green-500">{data.sizes}</span></p>
                 <p>Delivery  method: <span className="text-green-500">{data.delivery_method}</span></p>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>

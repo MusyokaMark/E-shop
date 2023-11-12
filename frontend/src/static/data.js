@@ -498,6 +498,146 @@ export const categoriesData = [
       { id: 4057, title: "Other" },
       { id: 4058, title: "Unbranded" }
     ],
+    colors: [
+      "Multicolor",
+      "All Colors",
+      "Ash",
+      "Azure",
+      "Baby Blue",
+      "Beige",
+      "Black",
+      "Blue",
+      "Bone",
+      "Bronze",
+      "Brown",
+      "Burgundy",
+      "Carrot",
+      "Cherry",
+      "Chestnut",
+      "Cloud",
+      "Coffee",
+      "Coral",
+      "Crimson",
+      "Ecru",
+      "Emerald",
+      "Fuchsia",
+      "Gold",
+      "Gray",
+      "Green",
+      "Honey",
+      "Hot Pink",
+      "Ivory",
+      "Khaki",
+      "Lemon",
+      "Light Blue",
+      "Light Green",
+      "Lilac",
+      "Magenta",
+      "Mauve",
+      "Merigold",
+      "Mint",
+      "Multi",
+      "Multicolor",
+      "Mustard",
+      "Navy Blue",
+      "Ochre",
+      "Orange",
+      "Other",
+      "Pearl",
+      "Pink",
+      "Plum",
+      "Purple",
+      "Red",
+      "Rose Gold",
+      "Rose",
+      "Ruby",
+      "Silver",
+      "Tan",
+      "Turquoise",
+      "Violet",
+      "White",
+      "Wine",
+      "Yellow"
+    ],
+    materials: [
+      "Spandex",
+      "Cotton",
+      "Silk",
+      "Polyester",
+      "Elastic",
+      "Denim",
+      "Polyester",
+      "Polycotton",
+      "Wool",
+      "Viscose",
+      "Satin",
+      "Leather",
+      "Nylon",
+      "Linen",
+      "Chiffon",
+      "Acrylic",
+      "Lace",
+      "Linen",
+      "Corduroy",
+      "Satin",
+      "Velvet",
+      "Suede",
+      "Other"
+    ],
+    pattern: [
+      "Animal Print",
+      "Camouflage",
+      "Floral",
+      "Plain",
+      "Polka Dot",
+      "Striped",
+      "Tie-Dyed",
+      "Other",
+      "Checked",
+      "Spotted",
+      "Mixed"
+    ],
+    sizes: [
+      "Regular (One Size)",
+      "3XS",
+      "XXS",
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "2XL",
+      "3XL",
+      "4XL",
+      "5XL",
+      "6XL",
+      "7XL",
+      "34 & Below",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48 & Above",
+      "Regular (One Size)",
+      "All Sizes"
+    ],
+    styles: [
+      "Casual",
+      "Formal",
+      "Classic",
+      "Sport",
+      "Other"
+    ],
     subcategories: [
       {
         id: 401,
@@ -508,6 +648,7 @@ export const categoriesData = [
         id: 402,
         title: "Women's Clothing",
         image_Url: "",
+
         Type: [
           {
             id: 4021,
@@ -639,33 +780,255 @@ export const categoriesData = [
       },
       {
         id: 403,
-        title: "Undergarments",
+        title: "Women's Undergarments",
         image_Url: "",
+        Type: [
+          {
+            id: 4031,
+            title: "Camisoles & Vests",
+          },
+          {
+            id: 4032,
+            title: "Bras",
+          },
+          {
+            id: 4033,
+            title: "Boob Tape",
+          },
+          {
+            id: 4034,
+            title: "Panties",
+          },
+          {
+            id: 4035,
+            title: "Lingerie",
+          },
+          {
+            id: 4036,
+            title: "Shapewear",
+          },
+          {
+            id: 4037,
+            title: "Tights, Socks & Stockings"
+          },
+          {
+            id: 4038,
+            title: "Others",
+          },
+        ],
       },
       {
         id: 404,
-        title: "Jewelry & Accessories",
+        title: "Women's Jewelry & Accessories",
         image_Url: "",
+        Type: [
+          {
+            id: 4041,
+            title: "Earrings",
+          },
+          {
+            id: 4042,
+            title: "Necklaces & Pendants",
+          },
+          {
+            id: 4043,
+            title: "Rings & Toe Rings"
+          },
+          {
+            id: 4044,
+            title: "Bracelets & Anklets",
+          },
+          {
+            id: 4045,
+            title: "Beaded Accessories"
+          },
+          {
+            id: 4046,
+            title: "Chains & Brooches",
+          },
+          {
+            id: 4047,
+            title: "Hair & Head Jewelry",
+          },
+          {
+            id: 4048,
+            title: "Body Jewelry",
+          },
+          {
+            id: 4049,
+            title: "Custom Made Jewelry"
+          },
+          {
+            id: 40491,
+            title: "Jewelry Sets",
+          },
+          {
+            id: 40492,
+            title: "Sunglasses",
+          },
+          {
+            id: 40493,
+            title: "Scarves & Belts",
+          },
+          {
+            id: 40494,
+            title: "Hats & Bonnets",
+          },
+          {
+            id: 40495,
+            title: "Watches",
+          },
+          {
+            id: 40496,
+            title: "Travel Accessories",
+          },
+          {
+            id: 40497,
+            title: "Jewelry Boxes & Organizers",
+          },
+          {
+            id: 40498,
+            title: "Other"
+          },
+        ]
       },
-      {
-        id: 405,
-        title: "Footwear",
-        image_Url: "",
-      },
+      // {
+      //   id: 405,
+      //   title: "Footwear",
+      //   image_Url: "",
+      // },
       {
         id: 406,
         title: "Men Clothing",
         image_Url: "",
+        Type: [
+          {
+            id: 4061,
+            title: "T-shirt & Polos",
+          },
+          {
+            id: 4062,
+            title: "Shirts & Blazers",
+          },
+          {
+            id: 4063,
+            title: "Pants & Shorts",
+          },
+          {
+            id: 4063,
+            title: "Suits & Tuxedos",
+          },
+          {
+            id: 4064,
+            title: "Sweatshirts & Hoodies",
+          },
+          {
+            id: 4065,
+            title: "Jumpers & Cardigans",
+          },
+          {
+            id: 4066,
+            title: "Denim & Jeans",
+          },
+          {
+            id: 4067,
+            title: "Jackets & Coats",
+          },
+          {
+            id: 4068,
+            title: "Sleepwear",
+          },
+          {
+            id: 4069,
+            title: "Swimwear"
+          },
+          {
+            id: 40691,
+            title: "Sportswear & Activewear",
+          },
+          {
+            id: 40692,
+            title: "Men's Traditional wear"
+          },
+          {
+            id: 40693,
+            title: "African, Ankara & Vitenges"
+          },
+          {
+            id: 40694,
+            title: "Other"
+          },
+        ],
       },
       {
         id: 407,
-        title: "Undergarments",
+        title: "Men's Undergarments",
         image_Url: "",
+        Type: [
+          {
+            id: 4071,
+            title: "Underwears",
+          },
+          {
+            id: 4072,
+            title: "Vests",
+          },
+          {
+            id: 4073,
+            title: "Socks",
+          },
+          {
+            id: 4074,
+            title: "Tights",
+          },
+          {
+            id: 4075,
+            title: "Other"
+          },
+        ],
       },
       {
         id: 408,
-        title: "Jewelry & Accessories",
+        title: "Men's Jewelry & Accessories",
         image_Url: "",
+        Type: [
+          {
+            id: 4081,
+            title: "Rings",
+          },
+          {
+            id: 4082,
+            title: "Beaded Accessories",
+          },
+          {
+            id: 4083,
+            title: "Chains",
+          },
+          {
+            id: 4084,
+            title: "Sunglasses",
+          },
+          {
+            id: 4085,
+            title: "Belts & Ties",
+          },
+          {
+            id: 4086,
+            title: "Hats & Caps",
+          },
+          {
+            id: 4087,
+            title: "Watches",
+          },
+          {
+            id: 4088,
+            title: "Travel Accessories",
+          },
+          {
+            id: 4089,
+            title: "Other",
+          },
+        ],
       },
       {
         id: 409,
@@ -676,16 +1039,279 @@ export const categoriesData = [
         id: 410,
         title: "Unisex Shoes",
         image_Url: "",
+        Type: [
+          {
+            id: 4101,
+            title: "Barefoot Shoes",
+          },
+          {
+            id: 4102,
+            title: "Beach Water Shoes",
+          },
+          {
+            id: 4103,
+            title: "Chunky Shoes",
+          },
+          {
+            id: 4104,
+            title: "Cowboy Boots",
+          },
+          {
+            id: 4105,
+            title: "Galoshes",
+          },
+          {
+            id: 4106,
+            title: "HalfShoes",
+          },
+          {
+            id: 4107,
+            title: "Monk Shoes",
+          },
+          {
+            id: 4108,
+            title: "Pumps",
+          },
+          {
+            id: 4109,
+            title: "T-Strap Shoes",
+          },
+          {
+            id: 4110,
+            title: "Other",
+          },
+          {
+            id: 4111,
+            title: "Blucher Shoes",
+          },
+          {
+            id: 4112,
+            title: "Saddle Shoes",
+          },
+          {
+            id: 4113,
+            title: "Water Shoes",
+          },
+          {
+            id: 4114,
+            title: "Boxing Shoes"
+          },
+          {
+            id: 4115,
+            title: "Riding Boots",
+          },
+          {
+            id: 4116,
+            title: "Spool Heel Shoes",
+          },
+          {
+            id: 4117,
+            title: "Tennis Shoes",
+          },
+          {
+            id: 4118,
+            title: "Oxfords",
+          },
+          {
+            id: 4119,
+            title: "Ballet Shoes",
+          },
+          {
+            id: 4120,
+            title: "Moccasins",
+          },
+          {
+            id: 4121,
+            title: "Golf Shoes",
+          },
+          {
+            id: 4122,
+            title: "Boat Shoes",
+          },
+          {
+            id: 4123,
+            title: "Desert Boots",
+          },
+          {
+            id: 4124,
+            title: "Flip-Flops",
+          },
+          {
+            id: 4125,
+            title: "Clogs",
+          },
+          {
+            id: 4126,
+            title: "Brogues",
+          },
+          {
+            id: 4127,
+            title: "Mules",
+          },
+          {
+            id: 4128,
+            title: "Hiking Boots",
+          },
+          {
+            id: 4129,
+            title: "Rain Boots"
+          },
+          {
+            id: 4130,
+            title: "Slip-ons",
+          },
+          {
+            id: 4131,
+            title: "Army Boots",
+          },
+          {
+            id: 4132,
+            title: "Loafers",
+          },
+          {
+            id: 4133,
+            title: "Basketball Shoes",
+          },
+          {
+            id: 4134,
+            title: "Crocs",
+          },
+          {
+            id: 4135,
+            title: "Boots",
+          },
+          {
+            id: 4136,
+            title: "Trainers",
+          },
+          {
+            id: 4137,
+            title: "Flat Shoes",
+          },
+          {
+            id: 4138,
+            title: "Slippers",
+          },
+          {
+            id: 4139,
+            title: "Ankle Boots",
+          },
+          {
+            id: 4140,
+            title: "Safety Boots",
+          },
+          {
+            id: 4141,
+            title: "Sandals",
+          },
+          {
+            id: 4142,
+            title: "Canvas Shoes"
+          },
+          {
+            id: 4143,
+            title: "Sneakers",
+          },
+          {
+            id: 4144,
+            title: "Football Boots",
+          },
+          {
+            id: 4145,
+            title: "Slides",
+          },
+        ],
+
       },
       {
         id: 411,
         title: "Bags",
         image_Url: "",
+        Type: [
+          {
+            id: 4111,
+            title: "Purses & Purses",
+          },
+          {
+            id: 4112,
+            title: "Wallets & Card Holders",
+          },
+          {
+            id: 4113,
+            title: "Handbags & Clutches",
+          },
+          {
+            id: 4114,
+            title: "Tote Bags",
+          },
+          {
+            id: 4115,
+            title: "Shoulder & Cross-body Bags",
+          },
+          {
+            id: 4116,
+            title: "Backpacks and Laptop Bags"
+          },
+          {
+            id: 4117,
+            title: "Luggage & Travel Bags",
+          },
+          {
+            id: 4118,
+            title: "Shopping Bags",
+          },
+          {
+            id: 4119,
+            title: "All other Bags",
+          },
+        ],
       },
       {
         id: 412,
         title: "Leather Products",
         image_Url: "",
+        Type: [
+          {
+            id: 4121,
+            title: "Leather Garment & Jackets",
+          },
+          {
+            id: 4122,
+            title: "Leather Bags & Handbags",
+          },
+          {
+            id: 4123,
+            title: "Leather Wallets & Purses",
+          },
+          {
+            id: 4124,
+            title: "Leather Belts & Accessories",
+          },
+          {
+            id: 4125,
+            title: "Other Leather Goods & Items",
+          },
+        ],
+
+      },
+      {
+        id: 413,
+        title: "Uniforms, Gowns & Aprons",
+        image_Url: "",
+        Type: [
+          {
+            id: 4131,
+            title: "Uniforms",
+          },
+          {
+            id: 4132,
+            title: "Gowns",
+          },
+          {
+            id: 4133,
+            title: "Aprons",
+          },
+        ]
       },
     ],
   },

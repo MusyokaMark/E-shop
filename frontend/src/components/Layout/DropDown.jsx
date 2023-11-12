@@ -47,7 +47,7 @@ const DropDown = ({ categoriesData, setDropDown }) => {
   // };
 
   return (
-    <div className="pb-4 w-[270px] bg-[#fff] absolute  z-30 rounded-b-md shadow-sm">
+    <div className="pb-4 w-[270px] bg-[#fff] border-2 border-red-300 absolute  z-30 rounded-b-md shadow-sm">
       {categoriesData &&
         categoriesData.map((category, index) => (
           <div
@@ -73,7 +73,7 @@ const DropDown = ({ categoriesData, setDropDown }) => {
         ))}
       {selectedCategory && (
         <div
-          className="absolute top-0 left-[270px] w-[270px] bg-[#fff] z-30 rounded-b-md shadow-sm cursor-pointer h-full"
+          className="absolute top-0 left-[270px] w-[270px] bg-[#fff] border-2 border-red-300 z-30 rounded-b-md shadow-sm cursor-pointer h-full"
           onMouseEnter={() => handleMouseEnter(selectedCategory)}
           onMouseLeave={handleMouseLeave}
         >

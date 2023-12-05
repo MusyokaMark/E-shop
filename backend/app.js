@@ -9,7 +9,7 @@ const path = require("path");
 // const passport = require('passport')
 
 app.use(cors({
-  origin: 'e-shop-sgtp-musyokas-projects.vercel.app',
+  origin: 'https://e-shop-sgtp-musyokas-projects.vercel.app/',
   credentials: true
 }));
 

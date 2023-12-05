@@ -9,7 +9,7 @@ const path = require("path");
 // const passport = require('passport')
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'e-shop-musyokas-projects.vercel.app',
   credentials: true
 }));
 

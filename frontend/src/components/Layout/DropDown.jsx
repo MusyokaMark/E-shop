@@ -13,15 +13,15 @@ const DropDown = ({ categoriesData, setDropDown }) => {
     setDropDown(false);
     window.location.reload();
   };
-  const handleSubCategoryClick = (subcategories) => {
-    navigate(`/products?category=${selectedCategory.title}&subcategories=${subcategories.title}`);
+  const handleSubCategoryClick = (selectedSubCategory) => {
+    navigate(`/products?category=${selectedCategory.title}&selectedSubCategory=${selectedSubCategory.title}`);
     setDropDown(false);
-    window.location.reload();
+    // window.location.reload();
   };
   const handleTypeClick = (type) => {
     navigate(`/products?category=${selectedCategory.title}&subcategories=${selectedSubCategory.title}&types=${type}`);
     setDropDown(false);
-    window.location.reload();
+    // window.location.reload();
   };
   const handleMouseEnterType = (Type) => {
     setSelectedType(Type);
@@ -38,16 +38,16 @@ const DropDown = ({ categoriesData, setDropDown }) => {
   const handleMouseLeave = () => {
     setSelectedCategory(null);
   };
-  // const handleMouseEntersubCategory = (subCategory) => {
-  //   setSelectedsubCategory(subCategory);
-  // };
+  const handleMouseEntersubCategory = (subCategory) => {
+    setSelectedSubCategory(subCategory);
+  };
 
-  // const handleMouseLeavesubCategory = () => {
-  //   setSelectedsubCategory(null);
-  // };
+  const handleMouseLeavesubCategory = () => {
+    setSelectedSubCategory(null);
+  };
 
   return (
-    <div className="pb-4 w-[270px] bg-[#fff] border-2 border-red-300 absolute  z-30 rounded-b-md shadow-sm">
+    <div className="pb-4 w-[270px] bg-[#fff]  absolute  z-30 rounded-b-md shadow-sm">
       {categoriesData &&
         categoriesData.map((category, index) => (
           <div
@@ -73,7 +73,7 @@ const DropDown = ({ categoriesData, setDropDown }) => {
         ))}
       {selectedCategory && (
         <div
-          className="absolute top-0 left-[270px] w-[270px] bg-[#fff] border-2 border-red-300 z-30 rounded-b-md shadow-sm cursor-pointer h-full"
+          className="absolute top-0 left-[270px] w-[270px] bg-[#fff]  z-30 rounded-b-md shadow-sm cursor-pointer h-full"
           onMouseEnter={() => handleMouseEnter(selectedCategory)}
           onMouseLeave={handleMouseLeave}
         >
@@ -84,29 +84,24 @@ const DropDown = ({ categoriesData, setDropDown }) => {
           </ul>
         </div>
       )}
+      
       {selectedSubCategory && (
         <div
-        className="absolute top-0 left-[270px] w-[270px] bg-[#fff] z-30 rounded-b-md shadow-sm cursor-pointer"
-        onMouseEnter={() => handleSubCategoryClick(selectedSubCategory)}
-          onMouseLeave={handleMouseLeave}
-      >
-        <ul onClick={handleSubCategoryClick}>
-          {selectedSubCategory.Type.map((Type, index) => (
-            <li key={index}
-            onMouseEnter={() => handleMouseEnterType(Type)}
-            onMouseLeave={handleMouseLeaveType}
-            onClick={() => handleTypeClick(Type)}
-            >{Type.title}</li>
-          ))}
-        </ul>
-      </div>
-      )}
-      {selectedType && (
-        <div className="absolute top-0 left-[810px] w-[270px] bg-[#fff] z-30 rounded-b-md shadow-sm cursor-pointer">
-          <ul>
-            {/* Here you can show more specific details or handle type-specific actions */}
-            <li>{selectedType}</li>
-            {/* Add more details or actions related to the specific type */}
+          className="absolute top-0 left-[270px] w-[270px] bg-blue-400 z-30 rounded-b-md shadow-sm cursor-pointer"
+          onMouseEnter={() => handleMouseEntersubCategory(selectedSubCategory)}
+          onMouseLeave={handleMouseLeavesubCategory}
+        >
+          <ul onClick={handleSubCategoryClick}>
+            {selectedSubCategory.types.map((Type, index) => (
+              <li
+                key={index}
+                onMouseEnter={() => handleMouseEnterType(Type)}
+                onMouseLeave={handleMouseLeaveType}
+                onClick={() => handleTypeClick(Type)}
+              >
+                {Type.title}
+              </li>
+            ))}
           </ul>
         </div>
       )}

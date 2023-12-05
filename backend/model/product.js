@@ -73,6 +73,48 @@ const productSchema = new mongoose.Schema({
   styles: {
     type: String,
   },
+
+  //phones, tablets and accessories
+  model: {
+    type: String,
+  },
+  ram: {
+    type: String,
+  },
+  internalstorage: {
+    type: String,
+  },
+  batterycapacity: {
+    type: String,
+  },
+  operatingsystem: {
+    type: String,
+  },
+  displaytype: {
+    type: String,
+  },
+  screensize: {
+    type: String,
+  },
+  memorycard: {
+    type: String,
+  },
+  simtype: {
+    type: String,
+  },
+  network: {
+    type: String,
+  },
+  selectedInclusions: [{
+    type: String,
+  }],
+  tradein: {
+    type: String,
+  },
+  warranty: {
+    type: String,
+  },
+  //phone ends here
   images: [
     {
       public_id: {
